@@ -1,0 +1,23 @@
+body {
+  background-color: lightpink;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 50px;
+  border-width: 4px;
+
+  text-align: center;
+}
+th {
+  padding: 10px;
+}
+td {
+  color: blueviolet;
+  padding: 10px;
+}
+
+caption {
+  color: brown;
+  font-weight: bolder;
+}
