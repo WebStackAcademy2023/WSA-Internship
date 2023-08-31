@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="myButton">Hover Me</button>
+
+    <script>
+      const myButtonElement = document.getElementById("myButton");
+      myButtonElement.addEventListener("mouseover", function () {
+        myButtonElement.style.backgroundColor = "Pink";
+      });
+      myButtonElement.addEventListener("mouseout", function () {
+        myButtonElement.style.backgroundColor = "";
+      });
+    </script>
+  </body>
+</html>
