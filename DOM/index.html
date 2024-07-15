@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading">DOM Basics</h1>
+    <h3 class="head">Accessing</h3>
+    <h3 class="head">Manuplating</h3>
+    <h3 class="head">Displaying</h3>
+
+    <p id="para">This class we will learn on the basics of DOM</p>
+    <script>
+      const paragraph = document.getElementById("para");
+      console.log(paragraph);
+      paragraph.innerText = "This is genrated by DOM";
+
+      const para2 = document.querySelectorAll("h3");
+      console.log(para2);
+      para2[1].style.backgroundColor = "red";
+
+      for (let i = 0; i < para2.length; i++) {
+        para2[i].style.color = "blue";
+      }
+      const cls = document.getElementsByClassName("head");
+      console.log(cls);
+
+      for (let i = 0; i < para2.length; i++) {
+        cls[i].style.border = "2px solid black";
+      }
+    </script>
+  </body>
+</html>

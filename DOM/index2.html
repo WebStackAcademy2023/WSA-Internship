@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creating new Element</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="day">Monday</div>
+      <div class="day">Tuesday</div>
+      <div class="day">Wednesday</div>
+      <div class="day">Thrusday</div>
+    </div>
+    <script>
+      const parent = document.querySelector(".parent");
+
+      //   1) Create an element
+      const div = document.createElement("div");
+      //   2) Add content to the element
+      div.innerText = "Friday";
+      div.className = "day";
+      div.id = "genrated";
+      div.setAttribute("title", "genrated day");
+      div.style.color = "red";
+      //3) dispaly the element
+      parent.appendChild(div);
+      console.log(parent);
+
+      //   <div class="day" id="genrated" title="genrated day">Friday</div>;
+
+      const image = document.createElement("img");
+      image.src =
+        "https://i.pinimg.com/236x/6d/f3/e0/6df3e08cb07201b5b0d2e99f88585b9a.jpg";
+      image.style.height = "100px";
+      image.style.width = "50px";
+      document.body.appendChild(image);
+    </script>
+  </body>
+</html>
