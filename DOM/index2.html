@@ -35,6 +35,9 @@
       image.style.height = "100px";
       image.style.width = "50px";
       document.body.appendChild(image);
+
+      let oldImg = document.querySelector("img");
+      document.body.removeChild(oldImg);
     </script>
   </body>
 </html>

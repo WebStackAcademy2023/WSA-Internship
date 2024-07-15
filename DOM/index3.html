@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practical Example of dom</title>
+  </head>
+  <body>
+    <h1 id="header">Hello, Dom!</h1>
+    <button id="changeTextBtn">Change Text</button>
+    <button id="changeColorBtn">Change Color</button>
+    <button id="addElementBtn">Add Element</button>
+    <button id="removeElementBtn">Remove Element</button>
+
+    <script>
+      let header = document.getElementById("header");
+      //Accesing the dom element
+      let addElement = document.getElementById("addElementBtn");
+
+      // Manupulating the dom using event handler
+
+      addElement.addEventListener("click", function () {
+        let para = document.createElement("p");
+        para.innerText = "This is genrated by button";
+        document.body.appendChild(para);
+      });
+
+      let removeElement = document.getElementById("removeElementBtn");
+
+      removeElement.addEventListener("click", function () {
+        let paragraphs = document.querySelectorAll("p");
+        console.log(paragraphs);
+        if (paragraphs.length > 0) {
+          document.body.removeChild(paragraphs[paragraphs.length - 1]);
+
+          // paragraphs[3]
+        }
+      });
+    </script>
+  </body>
+</html>
