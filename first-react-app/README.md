@@ -5,6 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Available Scripts
 
 In the project directory, you can run:
+## Before running npm start make sure to run npm install --force navigating to the react folder
 
 ### `npm start`
 
