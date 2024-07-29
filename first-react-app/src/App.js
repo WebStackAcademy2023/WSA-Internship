@@ -1,6 +1,7 @@
 
 import "./App.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 function App() {
   return <DataFetcher />;
@@ -12,18 +13,36 @@ function DataFetcher() {
   const [loading, setLoading] = useState(true);
   const [id, setId] = useState(1);
 
+  // useEffect(() => {
+  //   fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       setData(data);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => {
+  //       console.error("error in fetching data", error);
+  //       setLoading(false);
+  //     });
+  // }, [id]);
+
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setData(data);
+    const fetchData = async () => {
+      try {
+        const response = await axios(
+          `https://jsonplaceholder.typicode.com/todos/${id}`
+        );
+        console.log(response.data);
+        setData(response.data);
         setLoading(false);
-      })
-      .catch((error) => {
-        console.error("error in fetching data", error);
+      } catch (err) {
+        console.log(err);
         setLoading(false);
-      });
+      }
+    };
+    fetchData();
   }, [id]);
+
 
   function fetchNextItem() {
     setId((prevId) => prevId + 1);
